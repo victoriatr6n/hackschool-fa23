@@ -1,4 +1,5 @@
 import styles from './Navbar.module.css'
+import Link from 'next/link'
 
 const Navbar = () => {
     return (
@@ -6,13 +7,14 @@ const Navbar = () => {
         /* Hint: the Next.js Link component may come in handy https://nextjs.org/docs/pages/api-reference/components/link */
         <div id={styles.navbar}>
             <div className={styles.title}>
-                {/* Link to the home page here! */}
+                {<Link href = "/index">Home</Link>}
             </div>
-
-            {/* Link to other pages here! */}
-
+        <div className={styles.nav_buttons}>
+            {<Link href ="/gameHistory">Game History</Link>}
+            </div>
         </div>
     )
 }
 
 // Export the NavBar, and import it in pages/_app.jsx to render it on all pages of your website!
+export default Navbar;
